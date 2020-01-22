@@ -11,7 +11,7 @@ class DateConverter {
 
 		const args = date.split(separator).map((item, i) => item - (i % 2))
 
-		return Date.call(null, args)
+		return Date.apply(null, args)
 	}
 }
 
