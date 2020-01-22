@@ -7,9 +7,11 @@ class DateConverter {
 	}
 
 	static toDate(date) {
-		const signal = date.search('-') > 0 ? '-' : '/'
+		const separator = date.search('-') > 0 ? '-' : '/'
 
-		return new Date(...date.split(signal).map((item, i) => item - (i % 2)))
+		return new Date(
+			...date.split(separator).map((item, i) => item - (i % 2))
+		)
 	}
 }
 
