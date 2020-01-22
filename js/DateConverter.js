@@ -9,9 +9,9 @@ class DateConverter {
 	static toDate(date) {
 		const separator = date.search('-') > 0 ? '-' : '/'
 
-		return new Date(
-			...date.split(separator).map((item, i) => item - (i % 2))
-		)
+		const args = date.split(separator).map((item, i) => item - (i % 2))
+
+		return Date.call(null, args)
 	}
 }
 
