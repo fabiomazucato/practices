@@ -9,7 +9,7 @@ class DateConverter {
 	static toDate(date) {
 		const separator = date.search('-') > 0 ? '-' : '/'
 
-		return new Date(...date.split(signal).map((item, i) => item - (i % 2)))
+		return new Date(...date.split(separator).map((item, i) => item - (i % 2)))
 
 		/** 
 		 * to work with ES 5.1: generic array-like object as arguments
