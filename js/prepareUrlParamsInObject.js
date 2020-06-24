@@ -4,7 +4,11 @@ const url =
 const prepareUrlParamsInObject = (url) => {
 	const urlParameters = url.split('?')[1]
 
-	const objectUrlParameters = new URLSearchParams(urlParameters)
+	const parametersInProperty = decodeURI(
+		urlParameters.replace(/&/g, '","').replace(/=/g, '":"')
+	)
+
+	const objectUrlParameters = JSON.parse(`{"${parametersInProperty}"}`)
 
 	return objectUrlParameters
 }
